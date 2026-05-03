@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.username = "piper";
@@ -12,6 +12,9 @@
     htop
     swaybg
     waypaper
-    spotify
+    affinity-v3
   ];
 }
+
+
+  

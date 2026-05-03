@@ -23,7 +23,6 @@
   users.users.piper = {
     isNormalUser = true;
     description = "Piper";
-    shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     #  thunderbird
