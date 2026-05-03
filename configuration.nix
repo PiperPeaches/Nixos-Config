@@ -4,7 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz" + "/nixos")
+
       ./boot/boot.nix
       ./network/network.nix
       ./user/user.nix
@@ -19,4 +19,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.piper = import ./user/home.nix;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Disable systemd-oomd
+  systemd.oomd.enable = false;
 }

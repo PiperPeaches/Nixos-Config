@@ -10,5 +10,8 @@
   home.packages = with pkgs; [
     git
     htop
+    swaybg
+    waypaper
+    spotify
   ];
 }

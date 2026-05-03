@@ -1,18 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   services.xserver.enable = true;
 
   # Display Manager
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.wayland.enable = true;
 
   # Desktop Environments
-  services.desktopManager.plasma6.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
   programs.hyprland.enable = true;
   
   # GNOME (Make sure there is NO "xserver" in this line)
-  services.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # FIX: Tell NixOS to ignore the SSH password conflict
   programs.ssh.askPassword = pkgs.lib.mkForce "";
@@ -27,7 +27,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -44,7 +44,6 @@
     enable = true;
     remotePlay.openFirewall = true; 
     dedicatedServer.openFirewall = true; 
-    localNetworkGameTransfers.openFirewall = true; 
   };
 
   # Allow unfree packages
@@ -55,7 +54,6 @@
     cudatoolkit
     slack
     nodejs
-    gemini-cli-bin
     kitty
     wget
     vscode
@@ -64,11 +62,17 @@
     wine
     winetricks
     python3
-    bazaar
+    waybar
+    waypaper
+    swaybg
     vesktop
+    wofi
+    vlc
   ];
 
   services.flatpak.enable = true;
+  programs.fish.enable = true;
+  programs.kdeconnect.enable = true;
 
   # Fonts
   fonts = {
