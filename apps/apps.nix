@@ -50,8 +50,21 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      davinci-resolve-studio-unwrapped = prev.davinci-resolve-studio-unwrapped.overrideAttrs (old: {
+        src = /tmp/DaVinci_Resolve_Studio_20.3.2_Linux.zip;
+        # Use the 'got' hash from your error message here
+        outputHash = "1ypc0nn84wcnxk7wz6s6ccarqs8l33z0qw037wj59kpik7k820i6";
+        outputHashAlgo = "sha256";
+        outputHashMode = "flat";
+      });
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     git
+    rclone
     cudatoolkit
     slack
     nodejs
@@ -70,6 +83,7 @@
     spotify
     gdm-settings
     gnome-tweaks
+    libreoffice-still
   ];
 
   services.flatpak.enable = true;

@@ -10,6 +10,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [ 57621 ];
-  networking.firewall.allowedUDPPorts = [ 5353 ];
+  networking.firewall.allowedTCPPorts = [ 57621 5173 ];
+  networking.firewall.allowedUDPPorts = [ 5353 5173 ];
 }
