@@ -1,8 +1,11 @@
 {
   "$schema": "https://github.com",
   "logo": {
-    "source": "/home/piper/.config/fastfetch/anime.txt",
-    "type": "auto"
+    "source": "/etc/nixos/apps/fastfetch/anime.txt",
+    "type": "auto",
+    "color": {
+      "1": "red"
+    }
   },
   "modules": [
     "title", "os", "host", "kernel", "uptime", "packages", "shell", "display", "icons", "font", "cursor", "terminal", "terminalfont", "cpu", "gpu", "memory", "swap", "localip", "battery", "poweradapter", "break"

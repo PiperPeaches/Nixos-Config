@@ -66,6 +66,10 @@
     git
     rclone
     cudatoolkit
+    cudaPackages.cuda_nvcc
+    cudaPackages.libcublas
+    nvtopPackages.nvidia
+    nvidia-vaapi-driver
     slack
     nodejs
     gemini-cli-bin
