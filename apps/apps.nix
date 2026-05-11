@@ -36,7 +36,7 @@
     pulse.enable = true;
   };
 
-  # Install firefox.
+  # firefox.
   programs.firefox.enable = true;
 
   # Steam
@@ -63,33 +63,55 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    git
-    rclone
+    # Legal Activities
+    qbittorrent
+    tor
+
+    # Office
+    libreoffice-still
+    
+    #flatpak
+    bazaar
+
+    #Communication
+    slack
+    vesktop
+
+    # Terminal apps and utilities
+    ghostty 
+    fastfetch
+
+    # Compatibility Layers
+    wine
+    winetricks
+
+    # NVIDIA
     cudatoolkit
     cudaPackages.cuda_nvcc
     cudaPackages.libcublas
     nvtopPackages.nvidia
     nvidia-vaapi-driver
-    slack
-    nodejs
-    gemini-cli-bin
-    kitty
-    wget
-    vscode
-    fastfetch
-    ghostty
-    davinci-resolve-studio
-    wine
-    winetricks
-    python3
-    bazaar
-    vesktop
-    spotify
+
+    # GNOME
     gdm-settings
     gnome-tweaks
-    qbittorrent
-    libreoffice-still
+
+    # Programming
+    wget 
+    git
+    nodejs
+    gemini-cli-bin
+    python3
+    vscode
     jdk21
+
+    # Music & Video
+    davinci-resolve-studio
+    vlc
+    spotify
+
+    # Packaged Fonts
+    wine64Packages.fonts
   ];
 
   services.flatpak.enable = true;
