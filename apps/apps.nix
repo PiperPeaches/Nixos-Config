@@ -65,7 +65,7 @@
   environment.systemPackages = with pkgs; [
     # Legal Activities
     qbittorrent
-    tor
+    tor-browser
 
     # Office
     libreoffice-still
@@ -73,7 +73,7 @@
     #flatpak
     bazaar
 
-    #Communication
+    # Communication
     slack
     vesktop
 
