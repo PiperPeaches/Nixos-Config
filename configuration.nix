@@ -9,6 +9,7 @@
       ./network/network.nix
       ./user/user.nix
       ./apps/apps.nix
+      ./fonts/fonts.nix
       ./hardware/hardware.nix
     ];
 
