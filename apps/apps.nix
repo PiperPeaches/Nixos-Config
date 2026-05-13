@@ -62,6 +62,10 @@
     })
   ];
 
+  # Fish
+  programs.fish.enable = true;
+  users.users.piper.shell = pkgs.fish;
+
   environment.systemPackages = with pkgs; [
     # Legal Activities
     qbittorrent
@@ -76,10 +80,12 @@
     # Communication
     slack
     vesktop
+    valent
 
     # Terminal apps and utilities
     ghostty 
     fastfetch
+    lsd
 
     # Compatibility Layers
     wine

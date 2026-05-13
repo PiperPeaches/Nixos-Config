@@ -17,9 +17,4 @@
 
   system.stateVersion = "25.11";
 
-  # Home Manager configuration
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.piper = import ./user/home.nix;
-
-}
+  }
